@@ -37,7 +37,7 @@ main h1{
 .player-choice{
     height:30%;
     width:80%;
-    /* border:1px solid black; */
+    border:1px dashed black;
     border-radius:8px;
 
     display:flex;
@@ -45,17 +45,7 @@ main h1{
     justify-content:center;
     align-items:center;
 }
-#player-1, #player-2{
-    height:30%;
-    width:78%;
-}
-.chose1-X,.chose1-Y, .chose2-X ,.chose2-Y{
-    font-size:20px;
-    height:80%;
-    width:25%;
-    border-radius:8px;
-    border:1px solid black;
-}
+
 .game-options{
     height:50%;
     width:80%;
@@ -69,21 +59,20 @@ main h1{
     gap:4px;
 }
 .game-options #start-game-btn, #reset-game-btn, #new-game-btn{
-    height:30px;
-    width:120px;
+    height:6vh;
+    width:10vw;
     margin:10px 0px 5px 0px;
-    font-size:16px;
+    font-size:1rem;
 
-   
-
-    border-radius :4px;
+    border-radius :2rem;
     border:1px solid black; 
 }
 #start-game-btn:hover, #reset-game-btn:hover, #new-game-btn:hover{
-    border:3px solid rgb(0, 47, 255);
+    border:3px solid rgb(255, 115, 0);
+    cursor: pointer;
 }
 
-.game-options .win-msg{
+.game-options .win-msg, .tie-msg{
     margin-top:26px;
     font-size:5vmin;
     color:rgb(0, 0, 255);
@@ -123,6 +112,43 @@ main h1{
 
     font-size:8vmin;
 }
+
+
+ 
+
+
+
+/* =========== PLAYER 1 and PLAYER 2 ==================== */
+#player-1, #player-2 { 
+    width: 78%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0 4% 0;
+}
+.player-1-name, .player-2-name {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.player-1-choice, .player-2-choice {
+    width: 50%;
+    height: 90%;
+    /* border: 1px solid red; */
+    
+    display: flex;
+    justify-content: space-between;
+}
+.chose1-X, .chose1-Y, .chose2-X, .chose2-Y {
+    width: 48%;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-size: 1.15rem;
+}
+
 #message {
     position:absolute;
     text-align:center;
@@ -139,4 +165,96 @@ main h1{
 
 .hide{
     display:none;
+}
+
+.box:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+/* ========================MEDIA QUERIES========================= */
+
+/* For dekstop */
+@media(min-width:927px) {
+    #player-1, #player-2 { 
+        width: 78%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        margin: 0 0 4% 0;
+    }
+    .player-1-name, .player-2-name {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .player-1-choice, .player-2-choice {
+        width: 50%;
+        height: 90%;
+        /* border: 1px solid red; */
+        
+        display: flex;
+        justify-content: space-between;
+    }
+    .chose1-X, .chose1-Y, .chose2-X, .chose2-Y {
+        width: 48%;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        font-size: 1.15rem;
+    }
+}
+/* =========================================== */
+
+
+/* =====MEDIA QUERIES FOR SMALLER DEVICES====== */
+@media (max-width: 768px) {
+    .game-window {
+        flex-direction: column;
+        height: auto;
+        align-items: center; /*Vertically center align the center*/
+    }
+
+    .game-menu, .game-container{
+        width: 90%;
+        height: auto;
+    }
+
+    .game {
+        width: 90vmin;
+        height: 90vmin;
+        gap: 5px;
+    }
+
+    .box {
+        width: 24vmin;
+        height: 24vmin;
+        font-size: 6vmin;
+    }
+
+    #message {
+        font-size: 8vmin;
+        height: auto;
+        top: 5%;
+    }
+
+    .game-options #start-game-btn,
+    #reset-game-btn,
+    #new-game-btn {
+        height: 4vh;
+        width: 30vw;
+        font-size: 3vmin;
+    }
+
+    .chose1-X, .chose1-Y, .chose2-X, .chose2-Y {
+        font-size: 1rem;
+        width: 12vw;
+        height: 2.5vh;
+    }
+
+    #player-1, #player-2 {
+        flex-direction: column;
+        gap: 5px;
+    }    
 }
